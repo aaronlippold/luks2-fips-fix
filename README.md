@@ -12,6 +12,8 @@ This is provided without warranty or support. Use at your own risk.
 
 This script helps to convert LUKS2 keyslots to be FIPS compliant. It is particularly useful for users who did not know they could pass `fips=1` to the anaconda installer at boot to enable FIPS mode during installation. This script allows them to fix their encrypted volumes after the fact, enabling them to comply with FIPS requirements.
 
+When installing a system with FIPS mode enabled, it is necessary to pass the `fips=1` parameter to the anaconda installer at boot. This ensures that the system is configured to comply with FIPS requirements from the start. However, if this step is missed, the encrypted volumes created during installation may not be FIPS compliant.
+
 If you are in this situation and you can just reinstall the system, it is recommended to reinstall the system with FIPS mode enabled from the start. 
 
 This script is intended for users who have already installed the system without FIPS mode and need to convert their encrypted volumes to be FIPS compliant.
@@ -47,12 +49,6 @@ Example:
 ```
 
 The log file will contain timestamps and messages for each action performed by the script.
-
-## Background
-
-When installing a system with FIPS mode enabled, it is necessary to pass the `fips=1` parameter to the anaconda installer at boot. This ensures that the system is configured to comply with FIPS requirements from the start. However, if this step is missed, the encrypted volumes created during installation may not be FIPS compliant.
-
-This script provides a solution for users who find themselves in this situation. It allows them to convert their existing LUKS2 keyslots to be FIPS compliant, enabling them to enable FIPS mode on their system after installation.
 
 ## How It Works
 
